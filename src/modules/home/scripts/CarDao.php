@@ -30,6 +30,7 @@ function isCarRegistered($car, $plate, $conexao){
         $stmt->bindParam(":carId", $car['id']);
         try{
             $stmt->execute();
+            header("Location:../view/home.php");
         }catch (PDOException $e) {
             echo $e->getMessage();
         }
