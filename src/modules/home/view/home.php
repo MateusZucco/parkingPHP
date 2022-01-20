@@ -1,3 +1,6 @@
+<?php
+    include_once('../../auth/scripts/verifica_login.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,13 +12,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
-
-<?php
-include_once('../../auth/scripts/verifica_login.php')
-?>
-
 <body>
-
+<?php 
+  include('../scripts/historyDao.php');
+  $arr = parkingHistory();
+?>
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
@@ -28,6 +29,23 @@ include_once('../../auth/scripts/verifica_login.php')
                     <input type="submit" class="btn btn-primary" value="Enviar">
                 </form>
             </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Cor</th>
+                        <th scope="col">Entrada</th>
+                        <th scope="col">Saida</th>
+                        <th scope="col">À pagar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php echo $arr ?>
+                </tbody>
+            </table>
         </div>
     </div>
 </body>
