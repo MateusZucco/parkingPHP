@@ -16,10 +16,11 @@ function parking($plate)
         $car = $stmt->fetch(PDO::FETCH_ASSOC);
         if ($car){
             date_default_timezone_set("America/Sao_Paulo");
-            $hour = date("d-m-Y H:i:s");
-            $carId = $car['id'];         
-            $sqlSaidaCarro = "update entrada_saida es inner join veiculos v on es.veiculo = v.id set hr_saida = '{$hour}' where es.veiculo = '{$carId}'";
+            $date = date('y-m-d H:i:s');
+            $sqlSaidaCarro = "update entrada_saida es inner join veiculos v on es.veiculo = v.id set hr_saida = :date where es.veiculo = :carId";
             $stmt2 = $conexao->prepare($sqlSaidaCarro);
+            $stmt2->bindParam(":date", $date);
+            $stmt2->bindParam(":carId", $car['id']);
             $stmt2->execute();
         }else{
             echo 'faz meu pau de trampolin';
