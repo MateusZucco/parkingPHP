@@ -43,7 +43,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php echo $arr ?>
+                    <?php foreach($arr as $obj)  {
+                        echo '<tr>';
+                            echo '<td scope="col">'.$obj["placa"].'</td>';
+                            echo '<td>'.$obj["fabricante"].' '.$obj["modelo"].'</td>';
+                            echo '<td>'.$obj["cor"].'</td>';
+                            echo '<td>'.$obj["hr_entrada"].'</td>';
+                            echo '<td>'.$obj["hr_saida"].'</td>';
+                            if ($obj["hr_saida"] != null)
+                            {
+                                $horas = ceil((strtotime($obj['hr_saida']) - strtotime($obj['hr_entrada']))/ 3600);
+                                echo '<td>'.($horas * 5.5).'</td>';
+                            }
+                        echo '</tr>';
+                        }
+                    ?>
                 </tbody>
             </table>
         </div>

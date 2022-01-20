@@ -8,9 +8,12 @@
         $sql = "select * from entrada_saida join veiculos on entrada_saida.veiculo = veiculos.id order by entrada_saida.id desc limit 50;";
         $stmt = $conexao->prepare($sql);
         try {
+            $arr = array();
             $stmt->execute();
-            $arr = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $arr['placa'];
+            while( $obj = $stmt->fetch(PDO::FETCH_ASSOC) ) {
+                array_push($arr, $obj);
+            };
+            return $arr;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
