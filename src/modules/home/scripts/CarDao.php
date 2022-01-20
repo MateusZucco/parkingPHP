@@ -31,3 +31,10 @@ function parking($plate)
     }
 
 }
+
+function parkingHistory()
+{
+    $date = date('y-m-d H:i:s');
+    $conexao = criaConexao();
+    $sql = "select * from entrada_saida join veiculos on entrada_saida.veiculo = veiculo.id order by id desc limit 50"
+}

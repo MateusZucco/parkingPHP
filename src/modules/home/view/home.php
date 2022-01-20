@@ -23,7 +23,7 @@ include_once('../../auth/scripts/verifica_login.php')
                 <form action="../scripts/CarDao.php" method="post">
                     <div class="form-group">
                         <label for="carPlate">Placa</label>
-                        <input type="number" class="form-control" name="carPlate" id="carPlate">
+                        <input type="text" class="form-control" name="carPlate" id="carPlate">
                     </div>
                     <input type="submit" class="btn btn-primary" value="Enviar">
                 </form>
