@@ -23,7 +23,7 @@ include_once('../../auth/scripts/verifica_login.php')
                 <form action="../scripts/registerDao.php" method="post">
                     <div class="form-group">
                         <label for="carPlate">Placa</label>
-                        <input type="text" class="form-control" value="<?=$_GET['plate']; ?>" name="carPlate" id="carPlate">
+                        <input type="text" class="form-control" readonly value="<?=$_GET['plate']; ?>" name="carPlate" id="carPlate">
                     </div>
                     <div class="form-group">
                         <label for="carModel">Modelo</label>
