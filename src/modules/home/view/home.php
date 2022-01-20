@@ -24,7 +24,8 @@
                 <form action="../scripts/CarDao.php" method="post">
                     <div class="form-group">
                         <label for="carPlate">Placa</label>
-                        <input type="text" class="form-control" name="carPlate" id="carPlate">
+                        <input type="text" pattern='[A-Z]{3}[0-9][0-9A-Z][0-9]{2}' placeholder='AAA0000' class="form-control" name="carPlate" id="carPlate">
+                        <div class="help-text">padrão de placas do mercosul</div>
                     </div>
                     <input type="submit" class="btn btn-primary" value="Enviar">
                 </form>

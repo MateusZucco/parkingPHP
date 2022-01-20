@@ -21,7 +21,7 @@ function parking($plate)
 }
 
 function isCarRegistered($car, $plate, $conexao){
-    if ($car){
+    if ($car){        
         date_default_timezone_set("America/Sao_Paulo");
         $date = date('y-m-d H:i:s');
         $sqlSaidaCarro = "update entrada_saida es inner join veiculos v on es.veiculo = v.id set hr_saida = :date where es.veiculo = :carId";
