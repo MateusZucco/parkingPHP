@@ -39,7 +39,7 @@ function register($plate, $model, $color, $brand)
 
 }
 
-function registerEntry($car,$conexao){
+function registerEntry($car, $conexao){
     date_default_timezone_set("America/Sao_Paulo");
     $date = date('y-m-d H:i:s');
     $sqlEntradaCarro = "insert into entrada_saida(veiculo, hr_entrada) values(:carId, :date)";

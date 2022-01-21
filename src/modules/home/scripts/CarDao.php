@@ -8,7 +8,8 @@ parking($plate);
 function parking($plate)
 {
     $conexao = criaConexao();
-    $sql = "select * from veiculos where placa = '{$plate}'";
+    $sql = "select * from veiculos join entrada_saida on entrada_saida.veiculo = veiculos.id where veiculos.placa =
+    '{$plate}' order by entrada_saida.id desc limit 1;";
     $stmt = $conexao->prepare($sql);
     try {
         $stmt->execute();
