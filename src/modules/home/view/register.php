@@ -1,3 +1,6 @@
+<?php
+include_once('../../auth/scripts/verifica_login.php')
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,34 +13,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
 </head>
 
-<?php
-include_once('../../auth/scripts/verifica_login.php')
-?>
-
 <body>
     <div class="container">
         <div class="row">
             <div class="col-md-3"></div>
             <div class="jumbotron col-md-6">
             <h1 for="carPlate">Registrar Carro</h1>
-                <form action="../scripts/registerDao.php" method="post">
+                <form style="padding-top: 12px;" action="../scripts/registerDao.php" method="post">
                     <div class="form-group">
                         <label for="carPlate">Placa</label>
                         <input type="text" class="form-control" readonly value="<?=$_GET['plate']; ?>" name="carPlate" id="carPlate">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="padding-top: 12px;">
                         <label for="carModel">Modelo</label>
                         <input type="text" class="form-control" name="carModel" id="carModel">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="padding-top: 12px;">
                         <label for="carBrand">Marca</label>
                         <input type="text" class="form-control" name="carBrand" id="carBrand">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" style="padding-top: 12px;">
                         <label for="carColor">Cor</label>
                         <input type="text" class="form-control" name="carColor" id="carColor">
                     </div>
+                    <div style="padding-top: 22px; display:flex; justify-content:space-between">
+                    <a href="../../home/view/home.php">
+                        <button type="button" class="btn btn-info btn-md">
+                            <span></span> Voltar
+                        </button>
+                    </a>    
                     <input type="submit" class="btn btn-primary" value="Cadastrar">
+                    </div>
                 </form>
             </div>
         </div>
