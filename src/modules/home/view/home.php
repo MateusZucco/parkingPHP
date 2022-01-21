@@ -65,7 +65,7 @@
                             if ($obj["hr_saida"] != null)
                             {
                                 $horas = ceil((strtotime($obj['hr_saida']) - strtotime($obj['hr_entrada']))/ 3600);
-                                echo '<td>'."R$ ".($horas * 5.5).'</td>';
+                                echo '<td>'."R$".($horas * 5.5).'</td>';
                             }
                         echo '</tr>';
                         }
